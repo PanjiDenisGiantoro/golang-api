@@ -1,0 +1,31 @@
+# air.toml
+
+# Run go get -u github.com/cosmtrek/air to install the binary
+# This config file would help you to describe how to run your application using air.
+# To run this script you should use: air -c air.toml
+root = "."  # specify root directory. Default is ./
+
+[build]
+# This section is for running your application
+# Note: any other command could be used instead.
+cmd = "go"
+args = ["run", "."]
+
+# Optional, the main file(s) should be listed here.
+# These paths will be watched.
+main = ["main.go"]
+
+# Uncomment the line below and/or add more extensions to run on .css, .sass, .scss files change.
+# include_ext = ["html", "tpl", "tmpl", "js", "jsx", "coffee", "yml", "yaml", "json", "css", "less", "scss", "sass", "svg", "go", "mod", "sum"]
+
+# Uncomment the line below and/or add more paths to exclude from watching.
+# exclude_dir = ["assets", "tmp", "vendor"]
+
+# Uncomment the line below to enable error notification sound.
+# notifiers = []
+
+# Uncomment the line below and set it to true to enable debug mode.
+# debug = true
+
+# Uncomment the line below and set it to true to enable verbose mode.
+# verbose = true
