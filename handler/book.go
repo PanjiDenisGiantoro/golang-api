@@ -45,4 +45,5 @@ func PostBookHandler(c *gin.Context) {
 		"price":     bookInput.Price,
 		"sub_title": bookInput.SubTitle,
 	})
+
 }
