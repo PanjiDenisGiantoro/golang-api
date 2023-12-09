@@ -48,7 +48,7 @@ func main() {
 
 	for _, b := range books {
 		fmt.Println("title", b.Title)
-		fmt.Println("price %v", b)
+		fmt.Printf("price %v\n", b)
 
 	}
 
