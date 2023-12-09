@@ -37,6 +37,7 @@ func PostBookHandler(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"errors": errorMessages,
 		})
+
 		return
 	}
 	c.JSON(http.StatusOK, gin.H{
