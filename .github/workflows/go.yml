@@ -33,7 +33,7 @@ jobs:
         with:
           host: ${{secrets.SERVER}}
           username: ${{secrets.SERVER_USERNAME}}
-          passowrd: ${{secrets.SERVER_PASSWORD}}
+          password: ${{secrets.SERVER_PASSWORD}}
           port: ${{secrets.SERVER_PORT}}
           script: |
             whoami
