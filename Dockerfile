@@ -1,12 +1,13 @@
-FROM golang:1.16.4-buster AS builder
+FROM golang:alpine
 
-ARG VERSION=dev
+RUN apk update && apk add--no-cache git
 
-WORKDIR /go/src/app
-COPY main.go .
-RUN go build -o main -ldflags=-X=main.version=${VERSION} main.go
+WORKDIR /app
 
-FROM debian:buster-slim
-COPY --from=builder /go/src/app/main /go/bin/main
-ENV PATH="/go/bin:${PATH}"
-CMD ["main"]
+COPY . .
+
+RUN go mod tidy
+
+run go build -o binary
+
+ENTRYPOINT ["app/binary"]
