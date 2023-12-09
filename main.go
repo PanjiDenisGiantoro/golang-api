@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -39,17 +40,17 @@ func main() {
 	//err = db.Debug().First(&book).Error
 
 	//get
-	//var books []book.Book
-	//err = db.Debug().Find(&books).Error
-	//if err != nil {
-	//	fmt.Println(err)
-	//}
+	var books []book.Book
+	err = db.Debug().Find(&books).Error
+	if err != nil {
+		fmt.Println(err)
+	}
 
-	//for _, b := range books {
-	//	fmt.Println("title", b.Title)
-	//	fmt.Println("price %v", b)
-	//
-	//}
+	for _, b := range books {
+		fmt.Println("title", b.Title)
+		fmt.Println("price %v", b)
+
+	}
 
 	//update
 	//var book book.Book
@@ -69,12 +70,12 @@ func main() {
 	//}
 
 	//delete
-	var book book.Book
-
-	err = db.Debug().Where("id = ?", 1).Delete(&book).Error
-	if err != nil {
-		log.Fatal(err)
-	}
+	//var book book.Book
+	//
+	//err = db.Debug().Where("id = ?", 1).Delete(&book).Error
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
 
 	//fmt.Println("title", book.Title)
 	//fmt.Println("price %v", book)
